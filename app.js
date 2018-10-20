@@ -14,16 +14,17 @@ let getTeamRoster = {
     path: `${config.baseApi}${config.teamsApi}${currentNumber}${config.endPoints.rosterApi}`
     ,
     params: {
-        rosterApi: config.endPoints.rosterApi
+        // rosterApi: config.endPoints.rosterApi
     }
 };
 
 function consoleLog(callback) {
-    console.log(i);
     console.log(callback);
 }
 
-for (i = 1; i < config.numberOfTeamsInNhl; i++) {
+for (i = 0; i < config.numberOfTeamsInNhl; i++) {
+    console.log(currentNumber);
     currentNumber++;
+    console.log(getTeamRoster);
     fetchJSON(getTeamRoster, consoleLog)
 }
